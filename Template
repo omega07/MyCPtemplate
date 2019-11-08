@@ -29,7 +29,7 @@ for(int i=2;i<=1000;i++){
 if(a[i] == 1)
 {v.pb(i);for(int j=2*i;j<=1000000;j+=i)a[j] = 0;}
 }
-for(int i=321;i<=1000000;i++){
+for(int i=1001;i<=1000000;i++){
 if(a[i] == 1)
 v.pb(i);
 }
