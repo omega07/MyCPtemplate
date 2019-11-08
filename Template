@@ -1,0 +1,69 @@
+/*
+LIFE WOULD BE SO BEAUTIFUL IF BRUTE WORKED EVERYTIME
+*/
+#include <bits/stdc++.h>
+#include <string.h>
+#define int long long
+#define MAX 1000
+#define itn int
+#define inf 1e9
+#define mod 1000000007
+#define pb push_back
+#define all(x) x.begin(),x.end()
+#define sitr set<int> :: iterator
+#define mitr map<int,int> :: iterator
+#define pii pair<int,int>
+#define vii vector<pii>
+#define vi vector<int>
+#define sortall(x) sort(x.begin(),x.end());
+#define fast ios_base :: sync_with_stdio(0);cin.tie(NULL);cout.tie(NULL)
+using namespace std;
+/*
+int a[1000007];
+vi v;
+void seive()
+{for(int i=0;i<=1000000;i++)
+a[i] = 1;
+a[0]=a[1]=0;
+for(int i=2;i<=1000;i++){
+if(a[i] == 1)
+{v.pb(i);for(int j=2*i;j<=1000000;j+=i)a[j] = 0;}
+}
+for(int i=321;i<=1000000;i++){
+if(a[i] == 1)
+v.pb(i);
+}
+}
+*/
+//int palindrome (int n){int x;string s = tostring(n); if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
+//int nCr(int n,int r){if(r>n) return 0;  int k = r; if((n-r)<r) k = (n-r); int g = k; int ans = 1; for(int i=n;i>=n-k+1;i--) { ans *= i; if(ans%g == 0){ans /= g; g--;}} while(g>=1) { ans /= g; g--;} return ans;}
+//int fpow(int a,int n){if(n == 1) return a; if(n%2) return (a%mod * fpow(a,n-1)%mod)%mod; return (fpow(a,n/2)%mod * fpow(a,n/2)%mod)%mod;}
+//int toint(const string &s) {stringstream ss; ss << s; int x; ss >> x; return x;}
+//string tostring ( int number ){stringstream ss; ss<< number; return ss.str();}
+//int negativemod(int a,int n){return (a%n)+n;}
+//int palindrome (string s){int x; if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
+//int fpow(int a,int n,int modd){if(n == 1) return a; if(n%2) return (a%modd * fpow(a,n-1,modd)%modd)%modd; return (fpow(a,n/2,modd)%modd * fpow(a,n/2,modd)%modd)%modd;}
+
+
+
+//key to euclids extended --> gcd(a,b) = gcd(b,a%b)
+//also a%b = a-(a/b)*b;
+//hence ax+by = bx1+(a%b)y1.. ax+by = bx1+(ay1-(a/b)*by1)..
+//comparing x = y1;
+//y = x1-(a/b)*y1
+
+//void extendedEuclid(int a,int b,int &x,int &y){int res;if(b == 0){res = a;x = 1;y = 0;}else{extendedEuclid(b,a%b,x,y);int t = x;x = y;y = t - (a/b)*x;}}
+
+//if m is prime fermats little theorem can be used
+//int modInverse(int a,int m){return fpow(a,m-2);}
+
+//if not
+//In extendedGCD x is the mod mult inverse of a under b and y is the mod mult inverse of b under a
+//Inverse exist if a,m is co-prime
+//int mod__Inverse(int a,int m){int x,y;extendedEuclid(a,m,x,y); return (x%m+m)%m;}
+
+int32_t main(){
+    fast;
+    
+    return 0;
+}
