@@ -37,13 +37,13 @@ v.pb(i);
 */
 //int palindrome (int n){int x;string s = tostring(n); if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
 //int nCr(int n,int r){if(r>n) return 0;  int k = r; if((n-r)<r) k = (n-r); int g = k; int ans = 1; for(int i=n;i>=n-k+1;i--) { ans *= i; if(ans%g == 0){ans /= g; g--;}} while(g>=1) { ans /= g; g--;} return ans;}
-//int fpow(int a,int n){if(n == 1) return a; if(n%2) return (a%mod * fpow(a,n-1)%mod)%mod; return (fpow(a,n/2)%mod * fpow(a,n/2)%mod)%mod;}
+//int fpow(int a,int n){if(n == 0)return 1;if(n == 1) return a; if(n%2) return (a%mod * fpow(a,n-1)%mod)%mod; return (fpow(a,n/2)%mod * fpow(a,n/2)%mod)%mod;}
 //int toint(const string &s) {stringstream ss; ss << s; int x; ss >> x; return x;}
 //string tostring ( int number ){stringstream ss; ss<< number; return ss.str();}
 //int negativemod(int a,int n){return (a%n)+n;}
 //int palindrome (string s){int x; if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
 //int fpow(int a,int n,int modd){if(n == 1) return a; if(n%2) return (a%modd * fpow(a,n-1,modd)%modd)%modd; return (fpow(a,n/2,modd)%modd * fpow(a,n/2,modd)%modd)%modd;}
-
+//int I_fpow(int a,int n){int x=a;int ans = 1;while(n){if(n%2)ans = (ans%mod * x%mod)%mod;x = (x%mod * x%mod)%mod;n /= 2;}return ans;}
 
 
 //key to euclids extended --> gcd(a,b) = gcd(b,a%b)
@@ -55,7 +55,7 @@ v.pb(i);
 //void extendedEuclid(int a,int b,int &x,int &y){int res;if(b == 0){res = a;x = 1;y = 0;}else{extendedEuclid(b,a%b,x,y);int t = x;x = y;y = t - (a/b)*x;}}
 
 //if m is prime fermats little theorem can be used
-//int modInverse(int a,int m){return fpow(a,m-2);}
+//int modInverse(int a,int m){return I_fpow(a,m-2);}
 
 //if not
 //In extendedGCD x is the mod mult inverse of a under b and y is the mod mult inverse of b under a
