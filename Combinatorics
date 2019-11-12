@@ -1,0 +1,21 @@
+***   arranging r objects from a pool of n objects with alike and different objects
+--> make cases .... for eg.case1: 2 alike 1 diff 
+                           case2: 4 alike 1 diff and 1 diff and so on
+
+***   selecting r objects from a pool of alike and different objects
+--> for eg. 4->o1,2->o2 etc.
+now here we use solution --> x1+x2+x3... = r;
+where we can say that x1 is the amt of objects recieved by person1 and so on ... since here only the number of objects given to a person
+matters and not which objects
+solution --> nCr(n+r-1 , r-1)
+this solution gives all the combinations of 0 <= (x1,x2,x3..) <= n
+
+***   if you are given some restriction on x1,x2 etc .that can be solved using binomial theorem
+Solution ---> suppose x1+x2+x3...+xr = n and w1 <= x1 <= q1 ; w2 <= x2 <= q2 ; w3 <= x3 <= q3....and so on
+then solution is coefficient of x raised to n ( pow(x,n) ) in the expansion of { ( x^w1 + x^(w1+1) + ... + x^q1 ) * ( x^w2 + x^(w2+1) + .. + x^q2 ) * (...) .. [r terms for x1,x2,x3..xr] }
+to find the coefficient you can use basic GP formula for sum of a GP..
+
+***   if there is a circular permutation and clockwise and anti- dont matter then the number of permutations is (n-1)!/2
+      else if it matters then (n-1)!
+      
+
