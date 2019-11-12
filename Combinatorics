@@ -18,4 +18,13 @@ to find the coefficient you can use basic GP formula for sum of a GP..
 ***   if there is a circular permutation and clockwise and anti- dont matter then the number of permutations is (n-1)!/2
       else if it matters then (n-1)!
       
+***   Principle of inclusion and exclusion --> number of valid ways = total number of ways-(number of ways in which atleast 1 condition fails)+(number of ways in which atleast 2 condition fails)-(..3)+(..4)...
 
+
+***   Derangement - suppose there are n colored n boxes and n colored balls , arrange the balls in the boxes such that 1 ball in each box
+                    and for no 2 balls the color of the ball and box match.
+                    !n (derangement) = n!*[1 - (1/1!) + (1/2!) - (1/3!) .... upto n]
+      
+      suppose you want to put exactly k balls in the boxes correctly ,so the number of ways would be to select k balls from n balls
+      and then derange the remaining (n-k) balls into (n-k) boxes!!
+      --> nCr(n,k)*(n-k)!*[1 - (1/1!) + (1/2!) - (1/3!) ....]
