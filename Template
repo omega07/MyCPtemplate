@@ -16,6 +16,8 @@ LIFE WOULD BE SO BEAUTIFUL IF BRUTE WORKED EVERYTIME
 #define vii vector<pii>
 #define vi vector<int>
 #define sortall(x) sort(x.begin(),x.end());
+#define fori(i,n) for(int i=0;i<n;i++)
+#define test int t;cin>>t;while(t--)
 #define fast ios_base :: sync_with_stdio(0);cin.tie(NULL);cout.tie(NULL)
 using namespace std;
 /*
@@ -44,7 +46,7 @@ v.pb(i);
 //int palindrome (string s){int x; if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
 //int fpow(int a,int n,int modd){if(n == 1) return a; if(n%2) return (a%modd * fpow(a,n-1,modd)%modd)%modd; return (fpow(a,n/2,modd)%modd * fpow(a,n/2,modd)%modd)%modd;}
 //int I_fpow(int a,int n){int x=a;int ans = 1;while(n){if(n%2)ans = (ans%mod * x%mod)%mod;x = (x%mod * x%mod)%mod;n /= 2;}return ans;}
-
+//int fact(int n){int ans=1;if(n==0 || n==1)return 1;for(int i=2;i<=n;i++)ans*=i;return ans;}
 
 //key to euclids extended --> gcd(a,b) = gcd(b,a%b)
 //also a%b = a-(a/b)*b;
