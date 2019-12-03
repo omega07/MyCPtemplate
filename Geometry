@@ -1,0 +1,9 @@
+AREA OF TRIANGLE :: 
+1.) 1/2 * b * h (b->base,h->height)
+2.)  a^2*sin(B)*sin(C)/(2*sin(B+C)) ....... a is a side and the opposite angle to side with length a is A.
+                                            b is a side and opposite angle is B
+                                            Similarly c and opposite angle is C.
+3.) a*b*sin(C)/2 ............. Same as above
+4.)sqrt(s*(s-a)*(s-b)*(s-c)) ... Herons ...... s = (a+b+c)/2.
+5.)abs((xB*yA-xA*yB)+(xC*yB-xB*yC)+(xA*yC-xC*yA))/2 ......... xA,xB,xC,yA,yB,yC are coordinates of the triangle.
+6.)number of points inside triangle + half number of points on edge of triangle -1.
