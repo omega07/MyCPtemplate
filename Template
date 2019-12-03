@@ -48,6 +48,11 @@ v.pb(i);
 //int I_fpow(int a,int n){int x=a;int ans = 1;while(n){if(n%2)ans = (ans%mod * x%mod)%mod;x = (x%mod * x%mod)%mod;n /= 2;}return ans;}
 //int fact(int n){int ans=1;if(n==0 || n==1)return 1;for(int i=2;i<=n;i++)ans*=i;return ans;}
 
+
+// Addition of 2 strings ... based on the addition performed with the help of carry.
+//string add2strings(string s1,string s2){if(s1.length()>s2.length())swap(s1,s2);int n = s1.length();int m = s2.length();int carry = 0;reverse(all(s1));reverse(all(s2));string ans = "";for(int i=0;i<n;i++){int sum = (char)(s1[i]-'0')+(char)(s2[i]-'0')+carry;ans += (char)(sum%10 + '0');carry = sum/10;}for(int i=n;i<m;i++){int sum = (char)(s2[i]-'0')+carry;ans += (char)(sum%10 + '0');carry = sum/10;}if(carry)ans += (char)(carry+'0');reverse(all(ans));return ans;}
+
+
 //key to euclids extended --> gcd(a,b) = gcd(b,a%b)
 //also a%b = a-(a/b)*b;
 //hence ax+by = bx1+(a%b)y1.. ax+by = bx1+(ay1-(a/b)*by1)..
