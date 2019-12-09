@@ -33,7 +33,24 @@ to find the coefficient you can use basic GP formula for sum of a GP..
                n! - nCr(n,1)*(n-1)! + nCr(n,2)*(n-2)! -....upto n
                
                
-***   k distinct objects and n distinct boxes --> #noRestriction - pow(n,k)
-                                                  #no more than 1 in each box - nCr(n,k)*k!
-                                                  #exact 1 in each box - for this n = k --> n!
-                                                  #atleast 1 in each box - 
+***   n identical objects in k distinct bins - # no restriction - nCr(n+k-1,n-1)
+                                               # atleast 1 object in each - nCr(n-1,k-1)
+***   n identical objects in any number of partitions - # Here it cannot be with no restriction.
+                                                        # atleast one object in each - nCr(n-1,1-1) + nCr(n-1,2-1) + ..... + nCr(n-1,n-1).
+***   n distinct objects in k identical bins - can be thought of as partitioning a set with n elements - {1,2,3...n} into k subsets.
+                                               # atleast one in every part - i.e k non-empty subsets - S(n,k) - stirling numbers of second type
+                                                                                                       it can be given by a recurrence relation - S(n,k) = S(n-1,k-1) + k*S(n-1,k).
+                                                                                                       where S(n,n)=S(1,1)=S(0,0)=1.
+                                                                                                             S(n,0) = 0 for all n>=1
+THESE WERE THE STIRLING NUMBERS OF THE SECOND TYPE...                                                                                                             
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                             
+HERE ARE THE STIRLING NUMBERS OF THE FIRST TYPE DENOTED BY - SF(n,k)                                               
+                                               # THEY have a number thereotic defn :: SF(n,k) gives the sum of product of numbers taken n-k at a time from  the set of
+                                                 (n-1) numbers i.e {1,2,3,....,n-1}.
+                                                 WRITTEN WITH A RECURRENCE - SF(n,k) = SF(n-1,k-1) + (n-1)*SF(n,k-1).
+                                                                             SF(n,1) = n-1 for all n > 1.
+                                                                             SF(n,n) = 0.
+                                                                             SF(n,0) = PI(i) for all 1<=i<=(n-1).... PI denotes the product.
+                                                 Example - SF(4,2) gives the sum of product of 2 numbers taken at a time for {1,2,3}.
+                                                           SF(4,2) = 1.2 + 1.3 + 2.3 = 11.
+    
