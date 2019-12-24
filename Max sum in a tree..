@@ -1,0 +1,161 @@
+/*                            75
+                            95 64
+                          17 47 82
+                        18 35 87 10
+                      20 04 82 47 65
+                    19 01 23 75 03 34
+                  88 02 77 73 07 63 67
+                99 65 04 28 06 16 70 92
+              41 41 26 56 83 40 80 70 33
+            41 48 72 33 47 32 37 16 94 29
+          53 71 44 65 25 43 91 52 97 51 14
+        70 11 33 28 77 73 17 78 39 68 17 57
+      91 71 52 38 17 14 91 43 58 50 27 29 48
+    63 66 04 68 89 53 67 30 73 16 69 87 40 31
+  04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
+  
+  Find the maximum total from top to bottom of the triangle above.
+  
+  */
+  
+  /*
+LIFE WOULD BE SO BEAUTIFUL IF BRUTE WORKED EVERYTIME
+*/
+#include <bits/stdc++.h>
+#include <string.h>
+#define int long long
+#define ll long long
+#define MAX 1000000
+#define itn int
+#define inf 1e9
+#define mod (int)1e9 + 7
+#define pb push_back
+#define all(x) x.begin(),x.end()
+#define sitr set<int> :: iterator
+#define mitr map<int,int> :: iterator
+#define pii pair<int,int>
+#define vii vector<pii>
+#define vi vector<int>
+#define sortall(x) sort(x.begin(),x.end());
+#define fori(i,n) for(int i=0;i<n;i++)
+#define test int t;cin>>t;while(t--)
+#define fast ios_base :: sync_with_stdio(0);cin.tie(NULL);cout.tie(NULL)
+using namespace std;
+
+int a[10000007];
+vi v;
+void seive()
+{for(int i=0;i<=10000000;i++)
+a[i] = 1;
+a[0]=a[1]=0;
+for(int i=2;i<=3163;i++){
+if(a[i] == 1)
+{v.pb(i);for(int j=2*i;j<=10000000;j+=i)a[j] = 0;}
+}
+for(int i=3164;i<=10000000;i++){
+if(a[i] == 1)
+v.pb(i);
+}
+}
+
+//int palindrome (int n){int x;string s = tostring(n); if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
+//int nCr(int n,int r){if(r>n) return 0;  int k = r; if((n-r)<r) k = (n-r); int g = k; int ans = 1; for(int i=n;i>=n-k+1;i--) { ans *= i; if(ans%g == 0){ans /= g; g--;}} while(g>=1) { ans /= g; g--;} return ans;}
+//int fpow(int a,int n){if(n == 0)return 1;if(n == 1) return a; if(n%2) return (a%mod * fpow(a,n-1)%mod)%mod; return (fpow(a,n/2)%mod * fpow(a,n/2)%mod)%mod;}
+int toint(const string &s) {stringstream ss; ss << s; int x; ss >> x; return x;}
+string tostring ( int number ){stringstream ss; ss<< number; return ss.str();}
+//int negativemod(int a,int n){return (a%n)+n;}
+int palindrome (string s){int x; if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
+//int fpow(int a,int n,int modd){if(n == 1) return a; if(n%2) return (a%modd * fpow(a,n-1,modd)%modd)%modd; return (fpow(a,n/2,modd)%modd * fpow(a,n/2,modd)%modd)%modd;}
+//int I_fpow(int a,int n){int x=a;int ans = 1;while(n){if(n%2)ans = (ans%mod * x%mod)%mod;x = (x%mod * x%mod)%mod;n /= 2;}return ans;}
+//int fact(int n){int ans=1;if(n==0 || n==1)return 1;for(int i=2;i<=n;i++)ans*=i;return ans;}
+//int nCrmodp(int n,int r){int p = mod;int fact[n+1]; fact[0] = 1;for(int i=1;i<=n;i++)fact[i] = ((fact[i-1]%p) * (i%p))% p;return ((fact[n]%p) * (modInverse(fact[r],p)%p) * (modInverse(fact[n-r],p)%p))%p;}
+//void Store_N_factorial_By_MOD(){int i,j,k; arr[0] =1;for(i=1;i<MAX;i++) arr[i] = (arr[i-1]*i)%MOD;return;}
+
+
+// Addition of 2 strings ... based on the addition performed with the help of carry.
+//string add2strings(string s1,string s2){if(s1.length()>s2.length())swap(s1,s2);int n = s1.length();int m = s2.length();int carry = 0;reverse(all(s1));reverse(all(s2));string ans = "";for(int i=0;i<n;i++){int sum = (char)(s1[i]-'0')+(char)(s2[i]-'0')+carry;ans += (char)(sum%10 + '0');carry = sum/10;}for(int i=n;i<m;i++){int sum = (char)(s2[i]-'0')+carry;ans += (char)(sum%10 + '0');carry = sum/10;}if(carry)ans += (char)(carry+'0');reverse(all(ans));return ans;}
+
+
+//key to euclids extended --> gcd(a,b) = gcd(b,a%b)
+//also a%b = a-(a/b)*b;
+//hence ax+by = bx1+(a%b)y1.. ax+by = bx1+(ay1-(a/b)*by1)..
+//comparing x = y1;
+//y = x1-(a/b)*y1
+
+//void extendedEuclid(int a,int b,int &x,int &y){int res;if(b == 0){res = a;x = 1;y = 0;}else{extendedEuclid(b,a%b,x,y);int t = x;x = y;y = t - (a/b)*x;}}
+
+//if m is prime fermats little theorem can be used
+//int modInverse(int a,int m){return I_fpow(a,m-2);}
+
+//if not
+//In extendedGCD x is the mod mult inverse of a under b and y is the mod mult inverse of b under a
+//Inverse exist if a,m is co-prime
+//int mod__Inverse(int a,int m){int x,y;extendedEuclid(a,m,x,y); return (x%m+m)%m;}
+ll arr[MAX];
+ll Sqr(ll n) {return n*n;}
+ll MOD = mod;
+ll BigMod(ll B,ll P,ll M)
+{
+    if(P==0) return 1;
+    else if(P%2==0) return Sqr(BigMod(B,P/2,M))%M;
+    else return (B%MOD) * (BigMod(B,P-1,M))%M;
+}
+
+ll nCr_MOD(ll n ,ll r)
+{
+    ll num,denom,ret;
+    num=arr[n];
+    denom=(arr[r]*arr[n-r])%MOD;
+    ret = (num * BigMod(denom,MOD-2,MOD))%MOD; /// inverse Mod: (x/y)%M = ((x%M)*(y^M-2)%M)%M  if M=Prime Number
+    return ret;
+}
+
+
+
+bool prime(int n)
+{
+    for(int i=2;i<=sqrt(n);i++)
+    {
+        if(n%i == 0)
+            return false;
+    }
+    return true;
+}
+
+
+int32_t main(){
+
+    fast;
+    int a[15][15] = {0};
+    int n = 15;
+    string q;
+    int k = 0;
+    int t;
+    for(int i=0;i<n;i++)
+    {
+        int j = i;
+        k = 0;
+        while(j >= 0)
+        {
+            cin>>q;
+            t = toint(q);
+            a[k++][j--] = t;
+        }
+    }
+
+    for(int i=1;i<n;i++)
+        a[i][0] += a[i-1][0];
+    for(int i=1;i<n;i++)
+        a[0][i] += a[0][i-1];
+
+    for(int i=1;i<n;i++)
+    {
+        for(int j=1;j<n;j++)
+            a[i][j] += max(a[i-1][j],a[i][j-1]);
+    }
+    int maxx = 0;
+    for(int i=0;i<n;i++)
+        maxx = max(maxx,a[i][n-i-1]);
+    cout<<maxx;
+    return 0;
+}
