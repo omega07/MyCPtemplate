@@ -1,13 +1,18 @@
-/*
-LIFE WOULD BE SO BEAUTIFUL IF BRUTE WORKED EVERYTIME
+/*                                 ___ _____ 
+  ___  _ __ ___   ___  __ _  __ _ / _ \___  |
+ / _ \| '_ ` _ \ / _ \/ _` |/ _` | | | | / / 
+| (_) | | | | | |  __/ (_| | (_| | |_| |/ /  
+ \___/|_| |_| |_|\___|\__, |\__,_|\___//_/   
+                      |___/            
 */
+// Getting better at it ! ! !
 #include <bits/stdc++.h>
 #include <string.h>
 #define int long long
-#define MAX 1000
+#define MAX 1e7+5
 #define itn int
-#define inf 1e9
-#define mod 1000000007
+#define inf 1e18
+#define MOD (int)(1e9 + 7)
 #define pb push_back
 #define all(x) x.begin(), x.end()
 #define sitr set<int>::iterator
@@ -15,8 +20,7 @@ LIFE WOULD BE SO BEAUTIFUL IF BRUTE WORKED EVERYTIME
 #define pii pair<int, int>
 #define vii vector<pii>
 #define vi vector<int>
-#define sortall(x) sort(x.begin(), x.end());
-#define fori(i, n) for (int i = 0; i < n; i++)
+#define vll vector<unsigned int>
 #define test  \
     int t;    \
     cin >> t; \
@@ -26,6 +30,7 @@ LIFE WOULD BE SO BEAUTIFUL IF BRUTE WORKED EVERYTIME
     cin.tie(NULL);                 \
     cout.tie(NULL)
 using namespace std;
+
 void __print(int x) { cerr << x; }
 void __print(float x) { cerr << x; }
 void __print(double x) { cerr << x; }
@@ -69,36 +74,46 @@ void _print(T t, V... v)
 #else
 #define see(x...)
 #endif
-
 /*
-int a[1000007];
+int a[(int)MAX];
 vi v;
-void seive()
-{for(int i=0;i<=1000000;i++)
-a[i] = 1;
-a[0]=a[1]=0;
-for(int i=2;i<=1000;i++){
-if(a[i] == 1)
-{v.pb(i);for(int j=2*i;j<=1000000;j+=i)a[j] = 0;}
+void sieve(int max = (int)1e7) {
+    for(int i=0;i<=max;i++) a[i] = 1;
+    a[0] = a[1] = 0;
+    for(int i=2;i<=(int)sqrt(max);i++) {
+        if(a[i] == 1) {
+            for(int j=i*i;j<=max;j+=i) a[j] = 0;
+            v.pb(i);
+        }
+    }
+    for(int i=(int)sqrt(max)+1;i<=max;i++) {
+        if(a[i] == 1) v.pb(i);
+    }
 }
-for(int i=1001;i<=1000000;i++){
-if(a[i] == 1)
-v.pb(i);
-}
+
+int SPF[(int)MAX];
+void spf(int max = (int)1e7) {
+    for(int i=0;i<=max;i++) SPF[i] = 1;
+    SPF[0] = SPF[1] = 0;
+    for(int i=2;i<=sqrt(max);i++) {
+        if(SPF[i] == 1) {
+            for(int j = i;j<=max;j+=i) if(SPF[j] == 1) SPF[j] = i;
+        }
+    }
+    for(int i=sqrt(max)+1;i<=max;i++) if(SPF[i] == 1) SPF[i] = i;
 }
 */
-int palindrome_str (string s){int x; if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
-//int palindrome (int n){int x;string s = tostring(n); if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
-//int nCr(int n,int r){if(r>n) return 0;  int k = r; if((n-r)<r) k = (n-r); int g = k; int ans = 1; for(int i=n;i>=n-k+1;i--) { ans *= i; if(ans%g == 0){ans /= g; g--;}} while(g>=1) { ans /= g; g--;} return ans;}
-//int fpow(int a,int n){if(n == 0)return 1;if(n == 1) return a; if(n%2) return (a%mod * fpow(a,n-1)%mod)%mod; return (fpow(a,n/2)%mod * fpow(a,n/2)%mod)%mod;}
-//int toint(const string &s) {stringstream ss; ss << s; int x; ss >> x; return x;}
-//int negativemod(int a,int n){return (a%n)+n;}
+
+//calculate factorial...
+//vi f(MAX); void fact(int max = (int)1e7){f[0] = 1, f[1] = 1;for (int i = 2; i <= max; i++)f[i] = (i * f[i - 1]) % MOD;}
+
+//int nCrMODm(int n, int r, int m = MOD){fact();if(r == 0) return 1; int x = f[n], y = f[n - r], z = f[r]; return (x * mod__inverse(y) % m * mod__inverse(z) % m + m) % m;}
+//int I_fpow(int x,int y,int p = MOD){int res = 1;x = x % p;while (y > 0){if (y & 1) res = (res * x) % p;y = y >> 1;x = (x * x) % p;} return res;}
+
 //int palindrome (string s){int x; if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
-//int fpow(int a,int n,int modd){if(n == 1) return a; if(n%2) return (a%modd * fpow(a,n-1,modd)%modd)%modd; return (fpow(a,n/2,modd)%modd * fpow(a,n/2,modd)%modd)%modd;}
-//int I_fpow(int a,int n){int x=a;int ans = 1;while(n){if(n%2)ans = (ans%mod * x%mod)%mod;x = (x%mod * x%mod)%mod;n /= 2;}return ans;}
-//int fact(int n){int ans=1;if(n==0 || n==1)return 1;for(int i=2;i<=n;i++)ans*=i;return ans;}
+//int palindrome (int n){int x;string s = tostring(n); if(!(s.length()%2)) x = s.length()/2 - 1; else x = s.length()/2; for(int i=0;i<=x;i++) {if(s[i] != s[s.length()-1-i]) return 0; } return 1; }
+//int toint(const string &s) {stringstream ss; ss << s; int x; ss >> x; return x;}
 //string tostring ( int number ){stringstream ss; ss<< number; return ss.str();}
-//int nCrmodp(int n, int r, int p){if (r == 0)return 1;int fac[n + 1];fac[0] = 1;for (int i = 1; i <= n; i++) fac[i] = fac[i - 1] * i % p;return (fac[n] * modInverse(fac[r], p) % p *modInverse(fac[n - r], p) % p) %p;}
 // Addition of 2 strings ... based on the addition performed with the help of carry.
 //string add2strings(string s1,string s2){if(s1.length()>s2.length())swap(s1,s2);int n = s1.length();int m = s2.length();int carry = 0;reverse(all(s1));reverse(all(s2));string ans = "";for(int i=0;i<n;i++){int sum = (char)(s1[i]-'0')+(char)(s2[i]-'0')+carry;ans += (char)(sum%10 + '0');carry = sum/10;}for(int i=n;i<m;i++){int sum = (char)(s2[i]-'0')+carry;ans += (char)(sum%10 + '0');carry = sum/10;}if(carry)ans += (char)(carry+'0');reverse(all(ans));return ans;}
 
@@ -121,5 +136,5 @@ signed main()
 {
     fast;
     
-    return 0;
+    return 0;   
 }
