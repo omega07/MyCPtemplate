@@ -7,3 +7,9 @@ AREA OF TRIANGLE ::
 4.)sqrt(s*(s-a)*(s-b)*(s-c)) ... Herons ...... s = (a+b+c)/2.
 5.)abs((xB*yA-xA*yB)+(xC*yB-xB*yC)+(xA*yC-xC*yA))/2 ......... xA,xB,xC,yA,yB,yC are coordinates of the triangle.
 6.)number of points inside triangle + half number of points on edge of triangle -1.
+7.)2 * area = cross prdt
+    cross prdt of (0,0) ,(x1,y1) ,(x2,y2) = | x1*y2 - x2*y1 |.
+    
+For any polygon --> sum of angles in the interior are equal to pi*(n-2) .. where n is the number of sides of the polygon.
+
+The number of lattice points on the line joining (x1,y1) and (x2,y2) is --> gcd(|x1-x2| ,|y1-y1|) + 1 ... (including both points)
