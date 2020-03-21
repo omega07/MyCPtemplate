@@ -15,7 +15,7 @@ int main()
     string s;
     cin>>s;
     int n = s.length();
-    vi seq(n,inf),extend(n,inf),freq(n,0);
+    vi seq(n,inf),extend(n,inf),freq(n+1,0);
     stack<int> st;
     for(int i=0;i<n;i++) {
         if(s[i] == '(') {
@@ -39,7 +39,7 @@ int main()
         }
     }
     //for(int i=0;i<n;i++) cout<<extend[i]<<" ";
-    for(int i=n-1;i>=0;i--) {
+    for(int i=n;i>=0;i--) {
         if(freq[i] != 0) {
             cout<<i<<" "<<freq[i];
             return 0;
