@@ -15,6 +15,7 @@
 #define MOD (int)(1e9 + 7)
 #define pb push_back
 #define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(),x.rend()
 #define sitr set<int>::iterator
 #define mitr map<int, int>::iterator
 #define pii pair<int, int>
