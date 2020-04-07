@@ -132,6 +132,9 @@ void spf(int max = (int)1e7) {
 //In extendedGCD x is the mod mult inverse of a under b and y is the mod mult inverse of b under a
 //Inverse exist if a,m is co-prime
 //int mod__Inverse(int a,int m){int x,y;extendedEuclid(a,m,x,y); return (x%m+m)%m;}
+//int rr[] = {-1,0,1,0};
+//int cc[] = {0,1,0,-1};
+
 
 signed main()
 {
@@ -139,3 +142,16 @@ signed main()
     
     return 0;   
 }
+
+
+/*
+Beautiful program
+Please run for me.
+I've tried you in BASIC,
+FORTRAN and C.
+Beautiful program,
+You've errors galore.
+And each time I run you,
+You're swapped out of core.
+*/
+
