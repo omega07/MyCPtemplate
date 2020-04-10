@@ -14,6 +14,7 @@
 #define inf 1e18
 #define MOD (int)(1e9 + 7)
 #define pb push_back
+#define mk make_pair
 #define all(x) x.begin(), x.end()
 #define rall(x) x.rbegin(),x.rend()
 #define sitr set<int>::iterator
