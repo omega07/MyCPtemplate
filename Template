@@ -11,7 +11,7 @@
 #define int long long
 #define MAX 1e7+5
 #define itn int
-#define inf 1e18
+#define inf 5e18
 #define MOD (int)(1e9 + 7)
 #define pb push_back
 #define mk make_pair
