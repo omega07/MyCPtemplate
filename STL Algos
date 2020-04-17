@@ -1,0 +1,29 @@
+make_heap(iterator1, iterator2) DEFAULT MAX_HEAP - iterator1 - points to the start of the seq which is to be transformed in a heap.
+                                                   iterator2 - points to the end of ..
+                                                   
+push_heap(iter1, iter2) - used to insert an element in the heap. first push the intended element in the seq and the do push_heap on the whole seq
+
+pop_heap(iter1, iter2) - used to delete the maximum element of the heap.size of heap is decreased by 1.heap elements are reorganised accordingly after this operation.
+
+sort_heap(iter1, iter2) - used to sort the heap. it is not a heap after this op.
+
+is_heap(iter1, iter2) -  check whether the container is heap or not.
+
+is_heap_until(iter1, iter2) - returns the iterator till which the container is a heap.
+
+partial_sort(iterStart, iterMiddle, iterLast) - start and last point to the start and end of the container to be partially sorted and middle is till where the container has to be sorted
+
+nth_element(iterStart, iterMiddle, iterLast) - "
+
+inplace_merge(iterStart, iterMiddle, iterLast, {optional} comp) - merges 2 sorted list into 1 sorted list in O(max(size1,size2)).
+
+partition(iterStart, iterLast, Pred/Comparator) - returns iteratorthat points to the first element of the second group of elements (those for which pred returns false)
+
+rotate(iterStart, iterMiddle, iterLast) - rotates the elements in a list such that the middle element becomes the new first element
+
+random_shuffle(iterStart, iterLast) - randomly shuffles the element in the seq
+
+generate(iterStart, iterLast, gen()) - it generates a seq of numbers acc to the func gen() and assigns it to succ pos of the container with iterator provided.
+
+next_permutation/ prev_permutation(iterStart, iterLast)
+
