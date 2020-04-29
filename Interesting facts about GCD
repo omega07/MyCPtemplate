@@ -1,0 +1,19 @@
+https://www.youtube.com/watch?v=WHVKkc8zSH4&list=PL2q4fbVm1Ik4liHX78IRslXzUr8z5QxsG&index=14
+
+GCD(a,b) = GCD(a-b,b) = GCD(a,b-a) = GCD(a+b,b) = GCD(a,a+b).
+
+with the subtraction method ... 
+eg. GCD(44,12) = GCD(32,12) = GCD(20,12)
+    *1st swap after 3 steps : GCD(20,12) = GCD(12,8)
+    *2nd swap after 1 step : GCD(12,8) = GCD(8,4) = GCD(4,4)
+    3rd swap after 2 step : GCD(4,4) = GCD(4,0) .. = 4
+    
+ THE ABOVE STEPS LOOKS LIKE THIS:
+ 44 = 12*_3_ + 8
+ 12 = 8*_1_ + 4
+ 8 = 4*0
+ END
+ 
+ 
+ GCD(a,b) <= a-b
+ 
