@@ -27,3 +27,4 @@ generate(iterStart, iterLast, gen()) - it generates a seq of numbers acc to the 
 
 next_permutation/ prev_permutation(iterStart, iterLast)
 
+max_element/min_element(iterStart, iterLast) - returns the iterator to the max/min element in the container.To get the value we should write *max/min_element(...)
