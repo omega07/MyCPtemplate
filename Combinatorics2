@@ -1,0 +1,10 @@
+Finding the maximum power of a number which is divisible by another number factorial .. i.e given n,k ,find the max power x such that k to the xth power if divisible 
+by n!.
+
+If k is prime, then we find the number of no.s in n! such that they are a multiple of k ..  = floor(n/k) ..
+Similarly ,the number of no.s which are divisible by k to the 2nd will be .. = floor(n/(k*k)) .. and so on .. until floor(n/(k*k*..*k i times)) = 0
+
+The sum of these will give the max power of k which is present in n!
+
+If k is composite, then we need to factorize k into its prime factors .. k = k1^p1 * k2^p2 * ... km^pm.
+We need to find the answer for every ki .. suppose the answer is ai ,then the max power of k present in n! will be min(ai/pi) for all i = 1,2,3,.. m.
