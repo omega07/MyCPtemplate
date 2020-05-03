@@ -53,7 +53,7 @@ void MatrixExpo(vv &v, vv I, int n, int power) {
 }
 
 int32_t main() {
-	raftaar;
+    raftaar;
     test {
         int n, power;
         cin>>n>>power;
