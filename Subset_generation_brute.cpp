@@ -1,6 +1,6 @@
 // generating all subsets using bitmasks
 vector<string> v;
-for(int i=0;i<len;i++) {
+for(int i=0;i<(1<<len)-1;i++) {
   int j = i;
   string f = "";
   while(j) {
@@ -10,4 +10,4 @@ for(int i=0;i<len;i++) {
   while(f.length() < n) f += '0';
   reverse(all(f));
   v.pb(f);
-  }
+}
