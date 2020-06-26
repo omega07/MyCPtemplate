@@ -127,8 +127,17 @@ void spf(int max = (int)1e7) {
 //hence ax+by = bx1+(a%b)y1.. ax+by = bx1+(ay1-(a/b)*by1)..
 //comparing x = y1;
 //y = x1-(a/b)*y1
-//void extendedEuclid(int a,int b,int &x,int &y){int res;if(b == 0){res = a;x = 1;y = 0;}else{extendedEuclid(b,a%b,x,y);int t = x;x = y;y = t - (a/b)*x;}}
-
+// int extendedEuclid(int a,int b,int &x,int &y) {
+//     a = abs(a), b = abs(b);
+//     if(b == 0) {
+//         x = 1, y = 0;
+//         return a;
+//     }
+//     int x1,y1;
+//     int g = extendedEuclid(b,a%b,x1,y1);
+//     x = y1, y = x1-((a/b)*y1);
+//     return g;
+// }
 //if m is prime fermats little theorem can be used
 //int modInverse(int a,int m){return I_fpow(a,m-2);}
 
@@ -138,7 +147,8 @@ void spf(int max = (int)1e7) {
 //int mod__Inverse(int a,int m){int x,y;extendedEuclid(a,m,x,y); return (x%m+m)%m;}
 //int rr[] = {-1,0,1,0};
 //int cc[] = {0,1,0,-1};
-
+//int knightr[] = {2,2,1,1,-2,-2,-1,-1};
+//int knightc[] = {1,-1,2,-2,1,-1,2,-2};
 
 signed main()
 {
