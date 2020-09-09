@@ -31,7 +31,7 @@ to find the coefficient you can use basic GP formula for sum of a GP..
       
       PROOF - works on inclusion and exclusion --> number of ways to arrange all balls - number of ways in which 1 ball goes into the correct + number of ways 2 balls goes into the correct -.....
                n! - nCr(n,1)*(n-1)! + nCr(n,2)*(n-2)! -....upto n
-               
+      
                
 ***   n identical objects in k distinct bins - # no restriction - nCr(n+k-1,n-1)
                                                # atleast 1 object in each - nCr(n-1,k-1)
