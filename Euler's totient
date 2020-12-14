@@ -9,7 +9,7 @@
 
 
 
-const int M = 1e6+1;
+const int M = 1e6+1, MAX = 1e7+1;
 int SPF[(int)MAX];
 int a[M];
 void spf(int max = (int)1e7) {
